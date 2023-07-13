@@ -1,12 +1,10 @@
-#include "lib/MemoryBlockAllocator.h"
+#include "MemoryBlockAllocator.h"
 
 #include <iostream>
 #include <chrono>
 #include <vector>
-#include <list>
 
 int main() {
-
     std::vector<std::pair<int, size_t>> groups;
     groups.resize(11);
     groups[0].second = 1; groups[0].first = 10000;
@@ -21,7 +19,7 @@ int main() {
     groups[9].second = 512; groups[9].first = 10000;
     groups[10].second = 10000000; groups[10].first = 10;
 
-    MemoryBlockAllocator<int>testAlloc(groups);
+    MemoryBlockAllocator<int> testAlloc(groups);
     std::vector<int, MemoryBlockAllocator<int>> v1(testAlloc);
 
     auto start1 = std::chrono::system_clock::now();

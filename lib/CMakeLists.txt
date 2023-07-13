@@ -1,1 +1,0 @@
-add_library(MemoryBlockAllocator MemoryBlockAllocator.cpp utils/utils.cpp)

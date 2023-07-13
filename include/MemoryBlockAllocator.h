@@ -1,4 +1,4 @@
-#include "utils/utils.h"
+#include "utils.h"
 
 #include <map>
 #include <cstdlib>
@@ -27,12 +27,12 @@ private:
     }
 
 public:
-    typedef T value_type;
-    typedef value_type* pointer;
-    typedef const value_type* const_pointer;
-    typedef value_type& reference;
-    typedef const value_type& const_reference;
-    typedef size_t size_type;
+    using value_type = T;
+    using pointer = value_type*;
+    using const_pointer = const value_type*;
+    using reference = value_type&;
+    using const_reference = const value_type&;
+    using size_type = size_t;
 
     std::vector<std::pair<size_type, Group>> all_groups_;
     std::map<pointer, int> position_to_allocate_pointer_;
